@@ -12,10 +12,9 @@ import (
 
 func topUpQueue(nq *timerandnum.NumQueue) {
 
-	nnn := 123
-
 	for {
 		ttt := time.Now()
+		nnn := timerandnum.GenerateRandom()
 		nq.Add(ttt, nnn)
 		time.Sleep(1 * time.Second)
 	}

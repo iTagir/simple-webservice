@@ -14,7 +14,7 @@ func TestGenerateRandom(t *testing.T) {
 
 func TestAdd(t *testing.T) {
 	ttt := time.Now()
-	nnn := 123
+	nnn := timerandnum.GenerateRandom()
 	nq := timerandnum.NumQueue{Queue: []timerandnum.NumElem{}, Max: 10, Len: 0}
 	nq.Add(ttt, nnn)
 	if nq.Len != 1 {
