@@ -8,8 +8,11 @@ import (
 )
 
 func TestGenerateRandom(t *testing.T) {
-	i := timerandnum.GenerateRandom()
-	t.Log("returned something:", i)
+	rn := timerandnum.GenerateRandom()
+	t.Log("Random number:", rn)
+	if !(rn >= 0 && rn <= 10) {
+		t.Fatal("Failed to generate random number:", rn)
+	}
 }
 
 func TestAdd(t *testing.T) {
@@ -32,7 +35,7 @@ func TestAdd(t *testing.T) {
 	nq.Add(ttt, nnn)
 	nq.Add(ttt, nnn)
 	nq.Add(ttt, nnn)
-	nq.Add(ttt, nnn)
+	nq.Add(ttt, nnn) //eleventh element in the queue
 	if nq.Len != 10 {
 		t.Fatal("Failed Queue len 10: ", nq.Len)
 	}

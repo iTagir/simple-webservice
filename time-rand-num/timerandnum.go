@@ -31,7 +31,9 @@ func (q *NumQueue) Add(t time.Time, n int) {
 	}
 }
 
-func (q *NumQueue) Handle(w http.ResponseWriter, r *http.Request) {
+//HTTPServerResponse function to handle http request
+//responds with JSON
+func (q *NumQueue) HTTPServerResponse(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(q.Queue)
 }
